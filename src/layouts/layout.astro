@@ -1,0 +1,45 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content=" Con este servicio puedes enviar mensajes a cualquier número de WhatsApp sin necesidad de tenerlo registrado en tu agenda." />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    
+    <meta name="keywords" content="whatsapp, enviar, mensajes, sin, guardar, contacto, numero, telefono, celular, movil, chat, conversacion, api, apiwha, apiwhats, apiwhatsapp" />
+    <meta name="author" content="Manuel Vega" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  html {
+    background-color: #0d1419;
+    color: #eaeef3;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    opacity: 0.1;
+    background-image: url("/nuevowhats.png");
+    background-position: center;
+    z-index: -1;
+  }
+</style>
